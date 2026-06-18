@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ニュース | 株式会社クロスエージェント</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap');
+  :root { --black:#14171c; --white:#ffffff; --gray-light:#f4f5f7; --gray-border:#e4e7eb; --gray-text:#6b7280; --blue:#2461ec; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { font-family:'Noto Sans JP','Inter',sans-serif; color:var(--black); line-height:1.7; background:var(--white); }
+  a { text-decoration:none; color:inherit; }
+  .wrap { max-width:1080px; margin:0 auto; padding:0 24px; }
+  header { position:sticky; top:0; background:rgba(255,255,255,0.95); backdrop-filter:blur(6px); border-bottom:1px solid var(--gray-border); z-index:100; }
+  .header-inner { display:flex; align-items:center; justify-content:space-between; height:76px; }
+  .logo-mark { display:flex; align-items:center; gap:14px; }
+  .logo-text { display:flex; flex-direction:column; }
+  .logo-en { font-family:'Inter',sans-serif; font-size:19px; font-weight:700; letter-spacing:2px; }
+  .logo-jp { font-size:10px; color:var(--gray-text); letter-spacing:0.5px; margin-top:2px; }
+  nav ul { display:flex; gap:36px; list-style:none; }
+  nav a { font-size:14px; font-weight:500; }
+  nav a:hover, nav a.active { color:var(--blue); }
+  .page-hero { background:var(--gray-light); padding:64px 0; border-bottom:1px solid var(--gray-border); }
+  .page-hero .eyebrow { font-family:'Inter',sans-serif; font-size:12px; font-weight:600; letter-spacing:2.5px; color:var(--blue); margin-bottom:10px; display:block; }
+  .page-hero h1 { font-size:36px; font-weight:700; }
+  .content { padding:80px 0; }
+  .news-list { list-style:none; }
+  .news-item { border-bottom:1px solid var(--gray-border); }
+  .news-item:first-child { border-top:1px solid var(--gray-border); }
+  .news-item a { display:flex; align-items:baseline; gap:32px; padding:24px 0; transition:color 0.15s; }
+  .news-item a:hover { color:var(--blue); }
+  .news-date { font-family:'Inter',sans-serif; font-size:13px; color:var(--gray-text); min-width:100px; }
+  .news-cat { font-size:11px; font-weight:600; color:var(--blue); border:1px solid var(--blue); border-radius:3px; padding:2px 8px; min-width:80px; text-align:center; }
+  .news-title { font-size:15px; font-weight:500; }
+  .empty-note { color:var(--gray-text); font-size:14px; padding:40px 0; }
+  footer { padding:56px 0 40px; border-top:1px solid var(--gray-border); }
+  .footer-top { display:flex; justify-content:space-between; flex-wrap:wrap; gap:32px; padding-bottom:32px; border-bottom:1px solid var(--gray-border); }
+  .footer-nav ul { list-style:none; display:flex; gap:28px; }
+  .footer-nav a { font-size:13.5px; color:var(--gray-text); }
+  .footer-nav a:hover { color:var(--black); }
+  .footer-bottom { display:flex; justify-content:space-between; align-items:center; padding-top:24px; flex-wrap:wrap; gap:12px; }
+  .footer-bottom p { font-size:12.5px; color:var(--gray-text); }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap header-inner">
+    <a href="index.html" class="logo-mark">
+      <svg width="34" height="34" viewBox="0 0 40 40">
+        <path d="M0 0 L40 40" stroke="#14171c" stroke-width="7" stroke-linecap="round"/>
+        <path d="M0 40 L40 0" stroke="#14171c" stroke-width="7" stroke-linecap="round"/>
+      </svg>
+      <div class="logo-text">
+        <span class="logo-en">CROSS AGENT</span>
+        <span class="logo-jp">株式会社クロスエージェント</span>
+      </div>
+    </a>
+    <nav><ul>
+      <li><a href="about.html">会社概要</a></li>
+      <li><a href="business.html">事業内容</a></li>
+      <li><a href="news.html" class="active">ニュース</a></li>
+      <li><a href="recruit.html">採用情報</a></li>
+      <li><a href="contact.html">お問い合わせ</a></li>
+    </ul></nav>
+  </div>
+</header>
+
+<div class="page-hero">
+  <div class="wrap">
+    <span class="eyebrow">NEWS</span>
+    <h1>ニュース・お知らせ</h1>
+  </div>
+</div>
+
+<section class="content">
+  <div class="wrap">
+    <ul class="news-list">
+      <li class="news-item">
+        <a href="#">
+          <span class="news-date">2026.06.01</span>
+          <span class="news-cat">お知らせ</span>
+          <span class="news-title">株式会社クロスエージェントのウェブサイトを公開しました。</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <a href="index.html" class="logo-mark">
+        <svg width="28" height="28" viewBox="0 0 40 40">
+          <path d="M0 0 L40 40" stroke="#14171c" stroke-width="7" stroke-linecap="round"/>
+          <path d="M0 40 L40 0" stroke="#14171c" stroke-width="7" stroke-linecap="round"/>
+        </svg>
+        <div class="logo-text"><span class="logo-en" style="font-size:16px;">CROSS AGENT</span></div>
+      </a>
+      <div class="footer-nav"><ul>
+        <li><a href="about.html">会社概要</a></li>
+        <li><a href="business.html">事業内容</a></li>
+        <li><a href="news.html">ニュース</a></li>
+        <li><a href="recruit.html">採用情報</a></li>
+        <li><a href="contact.html">お問い合わせ</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>長崎県長崎市</p>
+      <p>&copy; 2026 Cross Agent Inc.</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
