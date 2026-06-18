@@ -1,149 +1,405 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>株式会社クロスエージェント</title>
-    <style>
-        body {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            line-height: 1.7;
-            color: #333;
-            margin: 0;
-            padding: 0;
-            background-color: #f9f9f9;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>株式会社クロスエージェント</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap');
 
-        header {
-            background-color: #fff;
-            border-bottom: 1px solid #eee;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
+  :root {
+    --black: #14171c;
+    --white: #ffffff;
+    --gray-light: #f4f5f7;
+    --gray-border: #e4e7eb;
+    --gray-text: #6b7280;
+    --blue: #2461ec;
+  }
 
-        /* 💻 PCでは左右に広がり、📱 スマホでは横スクロールするナビゲーション */
-        nav {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 15px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-sizing: border-box;
-        }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
 
-        /* ロゴ部分のスタイル（画像がなければ文字として綺麗に表示されます） */
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #111;
-            text-decoration: none;
-            flex-shrink: 0;
-        }
+  body {
+    font-family: 'Noto Sans JP', 'Inter', sans-serif;
+    color: var(--black);
+    line-height: 1.7;
+    background: var(--white);
+  }
 
-        .logo img {
-            max-height: 40px;
-            display: block;
-        }
+  a { text-decoration: none; color: inherit; }
 
-        /* メニュー全体の並び */
-        .menu-links {
-            display: flex;
-            align-items: center;
-            overflow-x: auto;
-            white-space: nowrap;
-            -webkit-overflow-scrolling: touch;
-        }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
 
-        .menu-links a {
-            margin-left: 25px;
-            text-decoration: none;
-            color: #555;
-            font-weight: bold;
-            font-size: 1rem;
-            flex-shrink: 0;
-            padding: 8px 0;
-        }
+  /* Header */
+  header {
+    position: sticky;
+    top: 0;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--gray-border);
+    z-index: 100;
+  }
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 76px;
+  }
+  .logo-mark { display: flex; align-items: center; gap: 14px; }
+  .logo-text { display: flex; flex-direction: column; }
+  .logo-en {
+    font-family: 'Inter', sans-serif;
+    font-size: 19px;
+    font-weight: 700;
+    letter-spacing: 2px;
+  }
+  .logo-jp {
+    font-size: 10px;
+    color: var(--gray-text);
+    letter-spacing: 0.5px;
+    margin-top: 2px;
+  }
+  nav ul {
+    display: flex;
+    gap: 36px;
+    list-style: none;
+  }
+  nav a {
+    font-size: 14px;
+    font-weight: 500;
+    position: relative;
+    padding-bottom: 4px;
+  }
+  nav a:hover { color: var(--blue); }
+  nav { display: flex; align-items: center; }
 
-        .menu-links a:hover {
-            color: #0066cc;
-        }
+  /* Hero */
+  .hero {
+    padding: 120px 24px 100px;
+    border-bottom: 1px solid var(--gray-border);
+  }
+  .hero-inner { max-width: 1080px; margin: 0 auto; }
+  .hero-eyebrow {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    color: var(--blue);
+    margin-bottom: 20px;
+  }
+  .hero h1 {
+    font-size: 44px;
+    font-weight: 700;
+    line-height: 1.45;
+    letter-spacing: -0.5px;
+    margin-bottom: 28px;
+  }
+  .hero h1 span { color: var(--blue); }
+  .hero p {
+    font-size: 16px;
+    color: var(--gray-text);
+    max-width: 560px;
+    margin-bottom: 36px;
+  }
+  .btn-row { display: flex; gap: 14px; }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 28px;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 4px;
+    transition: all 0.15s ease;
+  }
+  .btn-primary { background: var(--black); color: var(--white); }
+  .btn-primary:hover { background: var(--blue); }
+  .btn-outline { border: 1px solid var(--gray-border); color: var(--black); }
+  .btn-outline:hover { border-color: var(--black); }
 
-        /* 📱 スマホ画面（幅768px以下）での調整 */
-        @media (max-width: 768px) {
-            nav {
-                flex-direction: column;
-                align-items: flex-start;
-                padding: 15px 15px;
-            }
-            .menu-links {
-                width: 100%;
-                margin-top: 15px;
-                padding-bottom: 5px;
-            }
-            .menu-links a {
-                margin-left: 0;
-                margin-right: 20px;
-            }
-        }
+  /* Section shared */
+  section { padding: 90px 0; }
+  .section-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 48px;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .section-eyebrow {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+    color: var(--blue);
+    margin-bottom: 10px;
+    display: block;
+  }
+  .section-head h2 {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+  }
+  .section-head a {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--gray-text);
+    white-space: nowrap;
+  }
+  .section-head a:hover { color: var(--blue); }
 
-        .container {
-            max-width: 800px;
-            margin: 60px auto;
-            padding: 0 20px;
-            text-align: center;
-        }
+  /* Business grid */
+  .business { background: var(--gray-light); }
+  .business-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--gray-border);
+    border: 1px solid var(--gray-border);
+  }
+  .business-card {
+    background: var(--white);
+    padding: 36px 32px;
+  }
+  .business-num {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--gray-text);
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+    display: block;
+  }
+  .business-card h3 {
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  .business-card p {
+    font-size: 13.5px;
+    color: var(--gray-text);
+  }
 
-        .container h2 {
-            font-size: 2.2rem;
-            color: #111;
-            margin-bottom: 20px;
-        }
+  /* About */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+  }
+  .about-lead {
+    font-size: 19px;
+    font-weight: 500;
+    line-height: 1.9;
+  }
+  .about-lead .accent { color: var(--blue); }
+  table.about-table { width: 100%; border-collapse: collapse; }
+  table.about-table tr { border-bottom: 1px solid var(--gray-border); }
+  table.about-table tr:last-child { border-bottom: none; }
+  table.about-table th {
+    text-align: left;
+    padding: 16px 0;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--gray-text);
+    width: 130px;
+    vertical-align: top;
+  }
+  table.about-table td {
+    padding: 16px 0;
+    font-size: 14.5px;
+    font-weight: 500;
+  }
 
-        .container p {
-            font-size: 1.1rem;
-            color: #666;
-        }
+  /* CTA strip */
+  .cta-strip {
+    background: var(--black);
+    padding: 70px 0;
+  }
+  .cta-strip .wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+  .cta-strip h3 {
+    color: var(--white);
+    font-size: 22px;
+    font-weight: 700;
+  }
+  .cta-strip p { color: #9aa1ad; font-size: 14px; margin-top: 8px; }
+  .cta-strip .btn-primary { background: var(--blue); }
+  .cta-strip .btn-primary:hover { background: #1a4fd1; }
 
-        footer {
-            text-align: center;
-            padding: 40px 0;
-            color: #aaa;
-            font-size: 0.9rem;
-            border-top: 1px solid #eee;
-            background-color: #fff;
-            margin-top: 100px;
-        }
-    </style>
+  /* Footer */
+  footer { padding: 56px 0 40px; }
+  .footer-top {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 32px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid var(--gray-border);
+  }
+  .footer-nav ul { list-style: none; display: flex; gap: 28px; }
+  .footer-nav a { font-size: 13.5px; color: var(--gray-text); }
+  .footer-nav a:hover { color: var(--black); }
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 24px;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .footer-bottom p { font-size: 12.5px; color: var(--gray-text); }
+
+  @media (max-width: 760px) {
+    nav ul { display: none; }
+    .hero h1 { font-size: 30px; }
+    .business-grid { grid-template-columns: 1fr; }
+    .about-grid { grid-template-columns: 1fr; }
+    .cta-strip .wrap { flex-direction: column; align-items: flex-start; }
+  }
+</style>
 </head>
 <body>
 
-    <header>
-        <nav>
-            <!-- 📁 もしロゴ画像（logo.pngなど）があればここに差し替えてください。現在は文字で「株式会社クロスエージェント」と入れています。 -->
-            <a href="index.html" class="logo">株式会社クロスエージェント</a>
-            
-            <!-- 📄 消えていた全てのメニューを復元しました -->
-            <div class="menu-links">
-                <a href="index.html">ホーム</a>
-                <a href="about.html">会社概要</a>
-                <a href="business.html">事業内容</a>
-                <a href="#">ニュース</a>
-                <a href="#">採用情報</a>
-                <a href="#">お問い合わせ</a>
-            </div>
-        </nav>
-    </header>
+<header>
+  <div class="wrap header-inner">
+    <a href="index.html" class="logo-mark">
+      <svg width="34" height="34" viewBox="0 0 40 40">
+        <path d="M0 0 L40 40" stroke="#14171c" stroke-width="7" stroke-linecap="round"/>
+        <path d="M0 40 L40 0" stroke="#14171c" stroke-width="7" stroke-linecap="round"/>
+      </svg>
+      <div class="logo-text">
+        <span class="logo-en">CROSS AGENT</span>
+        <span class="logo-jp">株式会社クロスエージェント</span>
+      </div>
+    </a>
+    <nav>
+      <ul>
+        <li><a href="about.html">会社概要</a></li>
+        <li><a href="business.html">事業内容</a></li>
+        <li><a href="news.html">ニュース</a></li>
+        <li><a href="recruit.html">採用情報</a></li>
+        <li><a href="contact.html">お問い合わせ</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
 
-    <div class="container">
-        <h2>ウェブサイトへようこそ</h2>
-        <p>ここにトップページの文章が入ります。信頼と実績のクロスエージェント。</p>
+<section class="hero">
+  <div class="hero-inner">
+    <span class="hero-eyebrow">CROSS THE BOUNDARY</span>
+    <h1>事業の<span>領域を越える</span>。</h1>
+    <p>株式会社クロスエージェントは、動画制作・SNSマーケティング・広告代理店業を軸に、長崎から事業の可能性を広げるパートナーです。</p>
+    <div class="btn-row">
+      <a href="business.html" class="btn btn-primary">事業内容を見る</a>
+      <a href="contact.html" class="btn btn-outline">お問い合わせ</a>
     </div>
+  </div>
+</section>
 
-    <footer>
-        <p>&copy; 2026 株式会社クロスエージェント</p>
-    </footer>
+<section class="business">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <span class="section-eyebrow">BUSINESS</span>
+        <h2>事業内容</h2>
+      </div>
+      <a href="business.html">すべての事業内容を見る →</a>
+    </div>
+    <div class="business-grid">
+      <div class="business-card">
+        <span class="business-num">01</span>
+        <h3>動画制作・配信</h3>
+        <p>企画から撮影、編集、配信までを一貫して手がけ、伝えたいメッセージを動画の力で形にします。</p>
+      </div>
+      <div class="business-card">
+        <span class="business-num">02</span>
+        <h3>SNSマーケティング</h3>
+        <p>動画を活用したインターネットマーケティングとSNS活用のコンサルティングで、事業の認知を広げます。</p>
+      </div>
+      <div class="business-card">
+        <span class="business-num">03</span>
+        <h3>広告代理店業</h3>
+        <p>放送・通信・新聞・雑誌など多様なメディアを通じて、最適な広告戦略をご提案します。</p>
+      </div>
+      <div class="business-card">
+        <span class="business-num">04</span>
+        <h3>経営コンサルティング</h3>
+        <p>事業の成長フェーズに応じて、戦略立案から実行支援まで幅広くサポートします。</p>
+      </div>
+      <div class="business-card">
+        <span class="business-num">05</span>
+        <h3>イベント・飲食事業</h3>
+        <p>イベントにおける飲食店の出店や、食品の加工販売も手がけています。</p>
+      </div>
+      <div class="business-card">
+        <span class="business-num">06</span>
+        <h3>その他事業</h3>
+        <p>キャラクターグッズ販売、文化事業の企画、不動産仲介、労働者派遣など多角的に展開しています。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about">
+  <div class="wrap about-grid">
+    <div>
+      <span class="section-eyebrow">ABOUT US</span>
+      <h2 style="margin-bottom:24px;">会社概要</h2>
+      <p class="about-lead">長崎を拠点に、<span class="accent">「掛け合わせる」</span>ことで新しい価値をつくる会社です。</p>
+    </div>
+    <table class="about-table">
+      <tr><th>商号</th><td>株式会社クロスエージェント</td></tr>
+      <tr><th>本店所在地</th><td>長崎県長崎市</td></tr>
+      <tr><th>発行可能株式総数</th><td>1,000株</td></tr>
+      <tr><th>事業内容</th><td>動画制作・SNSマーケティング・広告代理店業 ほか</td></tr>
+    </table>
+  </div>
+</section>
+
+<div class="cta-strip">
+  <div class="wrap">
+    <div>
+      <h3>まずはお気軽にご相談ください</h3>
+      <p>動画制作からマーケティング戦略まで、貴社の課題に合わせてご提案します。</p>
+    </div>
+    <a href="contact.html" class="btn btn-primary">お問い合わせはこちら</a>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <a href="index.html" class="logo-mark">
+        <svg width="28" height="28" viewBox="0 0 40 40">
+          <path d="M0 0 L40 40" stroke="#14171c" stroke-width="7" stroke-linecap="round"/>
+          <path d="M0 40 L40 0" stroke="#14171c" stroke-width="7" stroke-linecap="round"/>
+        </svg>
+        <div class="logo-text">
+          <span class="logo-en" style="font-size:16px;">CROSS AGENT</span>
+        </div>
+      </a>
+      <div class="footer-nav">
+        <ul>
+          <li><a href="about.html">会社概要</a></li>
+          <li><a href="business.html">事業内容</a></li>
+          <li><a href="news.html">ニュース</a></li>
+          <li><a href="recruit.html">採用情報</a></li>
+          <li><a href="contact.html">お問い合わせ</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>長崎県長崎市</p>
+      <p>&copy; 2026 Cross Agent Inc.</p>
+    </div>
+  </div>
+</footer>
 
 </body>
 </html>
