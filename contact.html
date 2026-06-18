@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>お問い合わせ | 株式会社クロスエージェント</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap');
+  :root { --black:#14171c; --white:#ffffff; --gray-light:#f4f5f7; --gray-border:#e4e7eb; --gray-text:#6b7280; --blue:#2461ec; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { font-family:'Noto Sans JP','Inter',sans-serif; color:var(--black); line-height:1.7; background:var(--white); }
+  a { text-decoration:none; color:inherit; }
+  .wrap { max-width:1080px; margin:0 auto; padding:0 24px; }
+  header { position:sticky; top:0; background:rgba(255,255,255,0.95); backdrop-filter:blur(6px); border-bottom:1px solid var(--gray-border); z-index:100; }
+  .header-inner { display:flex; align-items:center; justify-content:space-between; height:76px; }
+  .logo-mark { display:flex; align-items:center; gap:14px; }
+  .logo-text { display:flex; flex-direction:column; }
+  .logo-en { font-family:'Inter',sans-serif; font-size:19px; font-weight:700; letter-spacing:2px; }
+  .logo-jp { font-size:10px; color:var(--gray-text); letter-spacing:0.5px; margin-top:2px; }
+  nav ul { display:flex; gap:36px; list-style:none; }
+  nav a { font-size:14px; font-weight:500; }
+  nav a:hover, nav a.active { color:var(--blue); }
+  .page-hero { background:var(--gray-light); padding:64px 0; border-bottom:1px solid var(--gray-border); }
+  .page-hero .eyebrow { font-family:'Inter',sans-serif; font-size:12px; font-weight:600; letter-spacing:2.5px; color:var(--blue); margin-bottom:10px; display:block; }
+  .page-hero h1 { font-size:36px; font-weight:700; }
+  .page-hero p { font-size:16px; color:var(--gray-text); margin-top:12px; }
+  .content { padding:80px 0; }
+  .contact-grid { display:grid; grid-template-columns:1fr 1.6fr; gap:80px; align-items:start; }
+  .contact-info h2 { font-size:20px; font-weight:700; margin-bottom:16px; }
+  .contact-info p { font-size:14px; color:var(--gray-text); line-height:1.9; margin-bottom:32px; }
+  .contact-detail { display:flex; flex-direction:column; gap:16px; }
+  .contact-detail-item { display:flex; flex-direction:column; gap:4px; }
+  .contact-detail-label { font-size:12px; font-weight:600; color:var(--gray-text); letter-spacing:1px; }
+  .contact-detail-value { font-size:15px; font-weight:500; }
+  .form-group { margin-bottom:24px; }
+  .form-group label { display:block; font-size:13px; font-weight:500; margin-bottom:8px; }
+  .form-group label .required { color:var(--blue); margin-left:4px; font-size:11px; }
+  .form-group input, .form-group select, .form-group textarea {
+    width:100%;
+    padding:12px 16px;
+    font-size:14px;
+    font-family:'Noto Sans JP',sans-serif;
+    border:1px solid var(--gray-border);
+    border-radius:4px;
+    background:var(--white);
+    color:var(--black);
+    transition:border-color 0.15s;
+    outline:none;
+  }
+  .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color:var(--blue); }
+  .form-group textarea { min-height:160px; resize:vertical; }
+  .btn-submit {
+    width:100%;
+    padding:16px;
+    font-size:15px;
+    font-weight:700;
+    font-family:'Noto Sans JP',sans-serif;
+    background:var(--black);
+    color:var(--white);
+    border:none;
+    border-radius:4px;
+    cursor:pointer;
+    transition:background 0.15s;
+    margin-top:8px;
+  }
+  .btn-submit:hover { background:var(--blue); }
+  .form-note { font-size:12px; color:var(--gray-text); margin-top:16px; text-align:center; }
+  footer { padding:56px 0 40px; border-top:1px solid var(--gray-border); }
+  .footer-top { display:flex; justify-content:space-between; flex-wrap:wrap; gap:32px; padding-bottom:32px; border-bottom:1px solid var(--gray-border); }
+  .footer-nav ul { list-style:none; display:flex; gap:28px; }
+  .footer-nav a { font-size:13.5px; color:var(--gray-text); }
+  .footer-nav a:hover { color:var(--black); }
+  .footer-bottom { display:flex; justify-content:space-between; align-items:center; padding-top:24px; flex-wrap:wrap; gap:12px; }
+  .footer-bottom p { font-size:12.5px; color:var(--gray-text); }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap header-inner">
+    <a href="index.html" class="logo-mark">
+      <svg width="34" height="34" viewBox="0 0 40 40">
+        <path d="M0 0 L40 40" stroke="#14171c" stroke-width="7" stroke-linecap="round"/>
+        <path d="M0 40 L40 0" stroke="#14171c" stroke-width="7" stroke-linecap="round"/>
+      </svg>
+      <div class="logo-text">
+        <span class="logo-en">CROSS AGENT</span>
+        <span class="logo-jp">株式会社クロスエージェント</span>
+      </div>
+    </a>
+    <nav><ul>
+      <li><a href="about.html">会社概要</a></li>
+      <li><a href="business.html">事業内容</a></li>
+      <li><a href="news.html">ニュース</a></li>
+      <li><a href="recruit.html">採用情報</a></li>
+      <li><a href="contact.html" class="active">お問い合わせ</a></li>
+    </ul></nav>
+  </div>
+</header>
+
+<div class="page-hero">
+  <div class="wrap">
+    <span class="eyebrow">CONTACT</span>
+    <h1>お問い合わせ</h1>
+    <p>お気軽にご連絡ください。2営業日以内にご返信いたします。</p>
+  </div>
+</div>
+
+<section class="content">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h2>まずはご相談から</h2>
+        <p>動画制作・SNSマーケティング・広告・採用に関するご質問など、どんなことでもお気軽にお問い合わせください。</p>
+        <div class="contact-detail">
+          <div class="contact-detail-item">
+            <span class="contact-detail-label">LOCATION</span>
+            <span class="contact-detail-value">長崎県長崎市</span>
+          </div>
+          <div class="contact-detail-item">
+            <span class="contact-detail-label">RESPONSE TIME</span>
+            <span class="contact-detail-value">2営業日以内</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form">
+        <form>
+          <div class="form-group">
+            <label>お名前<span class="required">必須</span></label>
+            <input type="text" placeholder="山田 太郎">
+          </div>
+          <div class="form-group">
+            <label>会社名</label>
+            <input type="text" placeholder="株式会社○○">
+          </div>
+          <div class="form-group">
+            <label>メールアドレス<span class="required">必須</span></label>
+            <input type="email" placeholder="example@email.com">
+          </div>
+          <div class="form-group">
+            <label>お問い合わせ種別</label>
+            <select>
+              <option value="">選択してください</option>
+              <option>動画制作について</option>
+              <option>SNSマーケティングについて</option>
+              <option>広告代理店業について</option>
+              <option>採用について</option>
+              <option>その他</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>お問い合わせ内容<span class="required">必須</span></label>
+            <textarea placeholder="お問い合わせ内容をご記入ください。"></textarea>
+          </div>
+          <button type="submit" class="btn-submit">送信する</button>
+          <p class="form-note">送信いただいた内容は、返信目的以外には使用しません。</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <a href="index.html" class="logo-mark">
+        <svg width="28" height="28" viewBox="0 0 40 40">
+          <path d="M0 0 L40 40" stroke="#14171c" stroke-width="7" stroke-linecap="round"/>
+          <path d="M0 40 L40 0" stroke="#14171c" stroke-width="7" stroke-linecap="round"/>
+        </svg>
+        <div class="logo-text"><span class="logo-en" style="font-size:16px;">CROSS AGENT</span></div>
+      </a>
+      <div class="footer-nav"><ul>
+        <li><a href="about.html">会社概要</a></li>
+        <li><a href="business.html">事業内容</a></li>
+        <li><a href="news.html">ニュース</a></li>
+        <li><a href="recruit.html">採用情報</a></li>
+        <li><a href="contact.html">お問い合わせ</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>長崎県長崎市</p>
+      <p>&copy; 2026 Cross Agent Inc.</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
