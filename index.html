@@ -17,29 +17,75 @@
         header {
             background-color: #fff;
             border-bottom: 1px solid #eee;
-            padding: 20px 0;
-            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
-        header h1 {
-            margin: 0;
-            font-size: 1.8rem;
-            color: #111;
-        }
-
+        /* 💻 PCでは左右に広がり、📱 スマホでは横スクロールするナビゲーション */
         nav {
-            margin-top: 15px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-sizing: border-box;
         }
 
-        nav a {
-            margin: 0 15px;
+        /* ロゴ部分のスタイル（画像がなければ文字として綺麗に表示されます） */
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #111;
+            text-decoration: none;
+            flex-shrink: 0;
+        }
+
+        .logo img {
+            max-height: 40px;
+            display: block;
+        }
+
+        /* メニュー全体の並び */
+        .menu-links {
+            display: flex;
+            align-items: center;
+            overflow-x: auto;
+            white-space: nowrap;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .menu-links a {
+            margin-left: 25px;
             text-decoration: none;
             color: #555;
             font-weight: bold;
+            font-size: 1rem;
+            flex-shrink: 0;
+            padding: 8px 0;
         }
 
-        nav a:hover {
+        .menu-links a:hover {
             color: #0066cc;
+        }
+
+        /* 📱 スマホ画面（幅768px以下）での調整 */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 15px 15px;
+            }
+            .menu-links {
+                width: 100%;
+                margin-top: 15px;
+                padding-bottom: 5px;
+            }
+            .menu-links a {
+                margin-left: 0;
+                margin-right: 20px;
+            }
         }
 
         .container {
@@ -67,20 +113,26 @@
             font-size: 0.9rem;
             border-top: 1px solid #eee;
             background-color: #fff;
-            position: -webkit-sticky;
-            position: sticky;
-            top: 100vh;
+            margin-top: 100px;
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>株式会社クロスエージェント</h1>
         <nav>
-            <a href="index.html">ホーム</a>
-            <a href="about.html">会社概要</a>
-            <a href="business.html">事業内容</a>
+            <!-- 📁 もしロゴ画像（logo.pngなど）があればここに差し替えてください。現在は文字で「株式会社クロスエージェント」と入れています。 -->
+            <a href="index.html" class="logo">株式会社クロスエージェント</a>
+            
+            <!-- 📄 消えていた全てのメニューを復元しました -->
+            <div class="menu-links">
+                <a href="index.html">ホーム</a>
+                <a href="about.html">会社概要</a>
+                <a href="business.html">事業内容</a>
+                <a href="#">ニュース</a>
+                <a href="#">採用情報</a>
+                <a href="#">お問い合わせ</a>
+            </div>
         </nav>
     </header>
 
