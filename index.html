@@ -6,86 +6,88 @@
     <title>株式会社クロスエージェント</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
             line-height: 1.7;
             color: #333;
             margin: 0;
             padding: 0;
+            background-color: #f9f9f9;
         }
+
         header {
-            width: 100%;
-            background-color: #ffffff;
-            border-bottom: 1px solid #e0e0e0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+            background-color: #fff;
+            border-bottom: 1px solid #eee;
+            padding: 20px 0;
+            text-align: center;
         }
+
+        header h1 {
+            margin: 0;
+            font-size: 1.8rem;
+            color: #111;
+        }
+
         nav {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 20px 10px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-sizing: border-box;
-            overflow-x: auto;
-            white-space: nowrap;
-            -webkit-overflow-scrolling: touch;
+            margin-top: 15px;
         }
+
         nav a {
+            margin: 0 15px;
             text-decoration: none;
-            color: #333333;
-            font-size: 1rem;
+            color: #555;
             font-weight: bold;
-            padding: 10px 20px;
-            display: inline-block;
-            flex-shrink: 0;
         }
+
         nav a:hover {
             color: #0066cc;
         }
-        nav a.current {
-            color: #888888;
-            pointer-events: none;
-        }
-        main {
+
+        .container {
             max-width: 800px;
-            margin: 40px auto;
+            margin: 60px auto;
             padding: 0 20px;
             text-align: center;
         }
-        h1 {
+
+        .container h2 {
+            font-size: 2.2rem;
             color: #111;
-            font-size: 2.2em;
-            margin-top: 50px;
+            margin-bottom: 20px;
         }
+
+        .container p {
+            font-size: 1.1rem;
+            color: #666;
+        }
+
         footer {
-            margin-top: 80px;
-            border-top: 1px solid #eee;
-            padding: 30px 0;
-            font-size: 0.85em;
             text-align: center;
-            color: #888;
+            padding: 40px 0;
+            color: #aaa;
+            font-size: 0.9rem;
+            border-top: 1px solid #eee;
+            background-color: #fff;
+            position: -webkit-sticky;
+            position: sticky;
+            top: 100vh;
         }
     </style>
 </head>
 <body>
 
     <header>
+        <h1>株式会社クロスエージェント</h1>
         <nav>
-            <a href="index.html" class="current">ホーム</a>
+            <a href="index.html">ホーム</a>
             <a href="about.html">会社概要</a>
             <a href="business.html">事業内容</a>
-            <a href="#">ニュース</a>
-            <a href="#">採用情報</a>
-            <a href="#">お問い合わせ</a>
         </nav>
     </header>
 
-    <main>
-        <h1>株式会社クロスエージェント</h1>
-        <p>ウェブサイトへようこそ。ここにトップページの文章が入ります。</p>
-    </main>
+    <div class="container">
+        <h2>ウェブサイトへようこそ</h2>
+        <p>ここにトップページの文章が入ります。信頼と実績のクロスエージェント。</p>
+    </div>
 
     <footer>
         <p>&copy; 2026 株式会社クロスエージェント</p>
