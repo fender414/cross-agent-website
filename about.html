@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>事業内容 | 株式会社クロスエージェント</title>
+<title>会社概要 | 株式会社クロスエージェント</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap');
 
@@ -73,81 +73,78 @@
     display: block;
   }
   .page-hero h1 { font-size: 36px; font-weight: 700; }
-  .page-hero p { font-size: 16px; color: var(--gray-text); margin-top: 12px; }
 
   /* Content */
   .content { padding: 80px 0; }
 
-  /* Business cards */
-  .business-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2px;
-    background: var(--gray-border);
-    border: 1px solid var(--gray-border);
-    margin-bottom: 80px;
-  }
-  .business-card {
-    background: var(--white);
-    padding: 44px 40px;
-    transition: background 0.15s;
-  }
-  .business-card:hover { background: var(--gray-light); }
-  .business-num {
-    font-family: 'Inter', sans-serif;
-    font-size: 12px;
-    font-weight: 600;
-    color: var(--blue);
-    letter-spacing: 1px;
-    margin-bottom: 20px;
-    display: block;
-  }
-  .business-card h3 {
-    font-size: 20px;
-    font-weight: 700;
-    margin-bottom: 14px;
-  }
-  .business-card p {
-    font-size: 14px;
-    color: var(--gray-text);
-    line-height: 1.8;
-  }
-  .business-card .tag {
-    display: inline-block;
-    font-size: 11px;
+  /* About table */
+  .about-lead {
+    font-size: 18px;
     font-weight: 500;
-    color: var(--blue);
-    border: 1px solid var(--blue);
-    border-radius: 3px;
-    padding: 2px 8px;
-    margin-top: 16px;
+    line-height: 2;
+    margin-bottom: 56px;
+    max-width: 640px;
+  }
+  .about-lead .accent { color: var(--blue); }
+
+  table.info-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 64px;
+  }
+  table.info-table tr { border-bottom: 1px solid var(--gray-border); }
+  table.info-table tr:first-child { border-top: 1px solid var(--gray-border); }
+  table.info-table th {
+    text-align: left;
+    padding: 20px 0;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--gray-text);
+    width: 180px;
+    vertical-align: top;
+  }
+  table.info-table td {
+    padding: 20px 0;
+    font-size: 15px;
+    font-weight: 500;
   }
 
-  /* CTA strip */
-  .cta-strip {
-    background: var(--black);
-    padding: 70px 0;
+  /* 事業目的リスト */
+  .business-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border: 1px solid var(--gray-border);
   }
-  .cta-strip .wrap {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 24px;
-  }
-  .cta-strip h3 { color: var(--white); font-size: 22px; font-weight: 700; }
-  .cta-strip p { color: #9aa1ad; font-size: 14px; margin-top: 8px; }
-  .btn {
-    display: inline-flex;
-    align-items: center;
-    padding: 14px 28px;
+  .business-list li {
+    padding: 16px 20px;
     font-size: 14px;
-    font-weight: 500;
-    border-radius: 4px;
-    transition: all 0.15s ease;
+    border-bottom: 1px solid var(--gray-border);
+    border-right: 1px solid var(--gray-border);
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
   }
-  .btn-primary { background: var(--blue); color: var(--white); }
-  .btn-primary:hover { background: #1a4fd1; }
+  .business-list li:nth-child(even) { border-right: none; }
+  .business-list li:nth-last-child(-n+2) { border-bottom: none; }
+  .business-num-small {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--blue);
+    min-width: 24px;
+    margin-top: 2px;
+  }
+
+  /* Section title */
+  .section-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--gray-border);
+  }
 
   /* Footer */
   footer { padding: 56px 0 40px; border-top: 1px solid var(--gray-border); }
@@ -189,8 +186,8 @@
     </a>
     <nav>
       <ul>
-        <li><a href="about.html">会社概要</a></li>
-        <li><a href="business.html" class="active">事業内容</a></li>
+        <li><a href="about.html" class="active">会社概要</a></li>
+        <li><a href="business.html">事業内容</a></li>
         <li><a href="news.html">ニュース</a></li>
         <li><a href="recruit.html">採用情報</a></li>
         <li><a href="contact.html">お問い合わせ</a></li>
@@ -201,71 +198,54 @@
 
 <div class="page-hero">
   <div class="wrap">
-    <span class="eyebrow">BUSINESS</span>
-    <h1>事業内容</h1>
-    <p>動画・SNS・広告を軸に、長崎から多角的に事業を展開しています。</p>
+    <span class="eyebrow">ABOUT US</span>
+    <h1>会社概要</h1>
   </div>
 </div>
 
 <section class="content">
   <div class="wrap">
-    <div class="business-grid">
 
-      <div class="business-card">
-        <span class="business-num">01</span>
-        <h3>動画制作・配信</h3>
-        <p>企画から撮影、編集、配信までを一貫して手がけます。伝えたいメッセージを動画の力で形にし、SNSや各種プラットフォームを通じて届けます。</p>
-        <span class="tag">VIDEO PRODUCTION</span>
-      </div>
+    <p class="about-lead">長崎を拠点に、<span class="accent">「掛け合わせる」</span>ことで<br>新しい価値をつくる会社です。</p>
 
-      <div class="business-card">
-        <span class="business-num">02</span>
-        <h3>インターネットマーケティング</h3>
-        <p>動画を活用したデジタルマーケティング戦略を立案・実行します。コンテンツ制作から効果測定まで、事業の認知拡大を支援します。</p>
-        <span class="tag">DIGITAL MARKETING</span>
-      </div>
+    <h2 class="section-title">基本情報</h2>
+    <table class="info-table">
+      <tr>
+        <th>商号</th>
+        <td>株式会社クロスエージェント</td>
+      </tr>
+      <tr>
+        <th>本店所在地</th>
+        <td>長崎県長崎市</td>
+      </tr>
+      <tr>
+        <th>発行可能株式総数</th>
+        <td>1,000株</td>
+      </tr>
+      <tr>
+        <th>公告方法</th>
+        <td>官報に掲載する方法により行う</td>
+      </tr>
+    </table>
 
-      <div class="business-card">
-        <span class="business-num">03</span>
-        <h3>SNSコンサルティング</h3>
-        <p>Instagram・X・TikTokなど各SNSプラットフォームの特性を活かした運用戦略をご提案します。フォロワー獲得から売上転換まで一貫してサポートします。</p>
-        <span class="tag">SNS CONSULTING</span>
-      </div>
+    <h2 class="section-title" style="margin-top: 56px;">定款に定める事業目的</h2>
+    <ul class="business-list">
+      <li><span class="business-num-small">01</span>動画の制作及び配信</li>
+      <li><span class="business-num-small">02</span>動画を活用したインターネットマーケティング</li>
+      <li><span class="business-num-small">03</span>SNSの活用に関するコンサルティング</li>
+      <li><span class="business-num-small">04</span>経営コンサルティング</li>
+      <li><span class="business-num-small">05</span>放送・通信・新聞・雑誌等の広告代理店業</li>
+      <li><span class="business-num-small">06</span>イベントにおける飲食店の出店</li>
+      <li><span class="business-num-small">07</span>食品の加工販売</li>
+      <li><span class="business-num-small">08</span>キャラクターグッズの販売</li>
+      <li><span class="business-num-small">09</span>音楽・美術・スポーツその他文化事業の企画・制作・興行</li>
+      <li><span class="business-num-small">10</span>不動産の販売及び仲介業</li>
+      <li><span class="business-num-small">11</span>労働者派遣事業</li>
+      <li><span class="business-num-small">12</span>前各号に付帯する一切の業務</li>
+    </ul>
 
-      <div class="business-card">
-        <span class="business-num">04</span>
-        <h3>経営コンサルティング</h3>
-        <p>事業の成長フェーズに応じた戦略立案から実行支援まで幅広くサポートします。中小企業の経営課題を多角的な視点で解決します。</p>
-        <span class="tag">MANAGEMENT</span>
-      </div>
-
-      <div class="business-card">
-        <span class="business-num">05</span>
-        <h3>広告代理店業</h3>
-        <p>放送・通信・新聞・雑誌等、多様なメディアを通じて最適な広告戦略をご提案します。長崎エリアのメディアに精通した知見を活かします。</p>
-        <span class="tag">ADVERTISING</span>
-      </div>
-
-      <div class="business-card">
-        <span class="business-num">06</span>
-        <h3>イベント・飲食・その他</h3>
-        <p>イベントにおける飲食店の出店、食品の加工販売、キャラクターグッズの販売、文化事業の企画・制作・興行、不動産仲介、労働者派遣事業など多角的に展開しています。</p>
-        <span class="tag">DIVERSIFIED</span>
-      </div>
-
-    </div>
   </div>
 </section>
-
-<div class="cta-strip">
-  <div class="wrap">
-    <div>
-      <h3>まずはお気軽にご相談ください</h3>
-      <p>動画制作からマーケティング戦略まで、貴社の課題に合わせてご提案します。</p>
-    </div>
-    <a href="contact.html" class="btn btn-primary">お問い合わせはこちら</a>
-  </div>
-</div>
 
 <footer>
   <div class="wrap">
