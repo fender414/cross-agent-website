@@ -5,63 +5,99 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>事業内容 | 株式会社クロスエージェント</title>
     <style>
+        /* 全体の基本設定 */
         body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.7;
             color: #333;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
+            margin: 0;
+            padding: 0;
         }
+
+        /* 👑 理想のメニューにするための設定（ヘッダー） */
         header {
-            border-bottom: 2px solid #333;
-            padding-bottom: 10px;
-            margin-bottom: 30px;
+            width: 100%;
+            background-color: #ffffff;
+            border-bottom: 1px solid #e0e0e0; /* 下にうっすら線を引く */
+            position: sticky; /* 画面の一番上に固定する設定 */
+            top: 0;
+            z-index: 1000;
         }
+
+        /* メニューを横一列に、均等に並べる記述 */
         nav {
+            max-width: 1000px; /* メニュー全体の最大幅 */
+            margin: 0 auto;
             display: flex;
-            gap: 15px;
+            justify-content: space-around; /* 均等に間隔をあける魔法の指示 */
+            align-items: center;
+            padding: 20px 10px;
         }
+
+        /* メニューの文字のデザイン */
         nav a {
             text-decoration: none;
-            color: #0066cc;
-            font-weight: bold;
+            color: #333333;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: color 0.3s;
         }
+
         nav a:hover {
-            text-decoration: underline;
+            color: #0066cc; /* マウスを乗せたら青くなる */
         }
+
+        /* 現在見ているページの文字を少し強調（または薄く固定） */
+        nav a.current {
+            color: #888888;
+            pointer-events: none;
+        }
+
+        /* 本文エリアの設定（メニューに被らないように余白をあける） */
+        main {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
         h1 {
             color: #111;
-            font-size: 1.8em;
-            margin-top: 20px;
+            font-size: 2em;
+            margin-bottom: 30px;
+            text-align: center; /* タイトルを中央に */
         }
+
         h2 {
             color: #004488;
             border-left: 4px solid #004488;
-            padding-left: 10px;
-            margin-top: 40px;
+            padding-left: 12px;
+            margin-top: 50px;
             font-size: 1.4em;
         }
+
         .service-box {
-            background: #f9f9f9;
-            padding: 20px;
-            border-radius: 5px;
-            margin-bottom: 20px;
+            background: #fbfbfb;
+            padding: 25px;
+            border-radius: 6px;
+            margin-bottom: 25px;
             border: 1px solid #eee;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02); /* ほんの少し影をつけて上品に */
         }
+
         .service-title {
             font-weight: bold;
-            font-size: 1.1em;
-            margin-bottom: 10px;
+            font-size: 1.15em;
+            margin-bottom: 12px;
             color: #222;
         }
+
         footer {
-            margin-top: 50px;
-            border-top: 1px solid #ccc;
-            padding-top: 20px;
-            font-size: 0.9em;
+            margin-top: 80px;
+            border-top: 1px solid #eee;
+            padding: 30px 0;
+            font-size: 0.85em;
             text-align: center;
-            color: #666;
+            color: #888;
         }
     </style>
 </head>
@@ -71,13 +107,18 @@
         <nav>
             <a href="index.html">ホーム</a>
             <a href="about.html">会社概要</a>
-            <a href="business.html" style="color: #333; pointer-events: none;">事業内容</a>
+            <a href="business.html" class="current">事業内容</a>
+            <a href="#">ニュース</a>
+            <a href="#">採用情報</a>
+            <a href="#">お問い合わせ</a>
         </nav>
     </header>
 
     <main>
         <h1>事業内容</h1>
-        <p>株式会社クロスエージェントは、地域の食文化とビジネスを繋ぎ、国内外へその魅力を届けるための総合サポートを提供しています。</p>
+        <p style="text-align: center; color: #666; margin-bottom: 40px;">
+            株式会社クロスエージェントは、地域の食文化とビジネスを繋ぎ、国内外へその魅力を届けるための総合サポートを提供しています。
+        </p>
 
         <h2>1. デジタル最適化・地域ブランディング</h2>
         <div class="service-box">
