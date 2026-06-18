@@ -5,16 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>株式会社クロスエージェント</title>
     <style>
-        /* 全体の基本設定 */
         body {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-family: Arial, sans-serif;
             line-height: 1.7;
             color: #333;
             margin: 0;
             padding: 0;
         }
-
-        /* 👑 メニューを一番上に固定 */
         header {
             width: 100%;
             background-color: #ffffff;
@@ -23,61 +20,42 @@
             top: 0;
             z-index: 1000;
         }
-
-        /* 💻 PCでは幅いっぱいに広げ、📱スマホでははみ出したら横スクロールする設定 */
+        /* エラーを回避するため、極限までシンプルに並べる設定にしました */
         nav {
-            max-width: 1200px; /* 少し広めに設定 */
+            max-width: 1000px;
             margin: 0 auto;
-            display: flex;
-            justify-content: space-between; /* 左右いっぱいに均等配置 */
-            align-items: center;
-            padding: 20px 10px;
-            box-sizing: border-box;
-            
-            /* スマホで2行に折り返さないための絶対ルール */
+            padding: 15px 10px;
+            text-align: center; /* PCでは中央にバランスよく並びます */
             overflow-x: auto;
             white-space: nowrap;
             -webkit-overflow-scrolling: touch;
         }
-
-        /* メニューのボタン1つずつ */
         nav a {
             text-decoration: none;
             color: #333333;
             font-size: 1rem;
-            font-weight: 500;
-            transition: color 0.3s;
-            
-            /* 左右の余白を「％」ではなく「固定値」にすることで、文字同士が絶対に潰れないようにガードします */
-            padding: 10px 20px; 
+            font-weight: bold;
+            padding: 10px 20px; /* 横の隙間をしっかり固定して文字潰れを防ぎます */
             display: inline-block;
-            flex-shrink: 0; /* 絶対に縮小させない指示 */
         }
-
         nav a:hover {
             color: #0066cc;
         }
-
-        /* 現在のページ（ホーム） */
         nav a.current {
             color: #888888;
             pointer-events: none;
         }
-
-        /* 本文エリア */
         main {
             max-width: 800px;
             margin: 40px auto;
             padding: 0 20px;
             text-align: center;
         }
-
         h1 {
             color: #111;
             font-size: 2.2em;
             margin-top: 50px;
         }
-
         footer {
             margin-top: 80px;
             border-top: 1px solid #eee;
@@ -111,4 +89,4 @@
     </footer>
 
 </body>
-</html>
+</html>+
