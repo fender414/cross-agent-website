@@ -20,11 +20,17 @@
             top: 0;
             z-index: 1000;
         }
+        /* ✨ ここを修正しました：最大幅をしっかり持たせ、左右いっぱいに均等に広げます */
         nav {
             max-width: 1000px;
             margin: 0 auto;
-            padding: 15px 10px;
-            text-align: center;
+            padding: 20px 0;
+            display: flex;
+            justify-content: space-between; /* これで最初のイメージ通りに左右に広がります */
+            align-items: center;
+            box-sizing: border-box;
+            
+            /* スマホで2行に折り返させないための設定 */
             overflow-x: auto;
             white-space: nowrap;
             -webkit-overflow-scrolling: touch;
@@ -36,6 +42,7 @@
             font-weight: bold;
             padding: 10px 20px;
             display: inline-block;
+            flex-shrink: 0; /* スマホで文字を潰れさせない指示 */
         }
         nav a:hover {
             color: #0066cc;
